@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body {
+	font: normal 18px/22px "Varela Round", sans-serif;
+	background-color: #e9ffff;
+	color: #2e2e2e;
+}
+h1, h2 {
+	font-family: "Signika", sans-serif;
+	font-weight: 600;
+}
+h1 {
+	font-size: 36px;
+	line-height: 46px;
+	color: #e0e0e0;
+}
+h2 {
+	font-size: 24px;
+	line-height: 33px;
+	margin-bottom: -20px;
+}
+p {
+	margin: 20px 0;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+}
+
+.fixed-nav-bar {
+	box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.6);
+}
+
+.content {
+	position: relative;
+	background: #464646 url(59H-from-gratisography.jpg) no-repeat center center fixed;
+	background-size: cover;
+ }
+.description, .some-related-articles {
+	width: 90%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+.description {
+	padding-top: 100px;
+	min-height: 250px;
+	text-align: center;
+}
+.some-related-articles {
+	color: #747474;
+}
+.some-related-articles h1 {
+	color: #384e56;
+	margin-top: 60px;
+	text-transform: uppercase;
+}
+.some-related-articles h2 a:link, .some-related-articles h2 a:visited	{
+	color: #464646;
+	transition: color 0.1s ease;
+}
+.some-related-articles h2 a:hover {
+	color: #000000;
+	transition: color 0.3s ease;
+}
+.summary {
+	color: #d9dee2;
+	margin-top: 40px;
+	margin-bottom: 60px;
+}
+.button, .button:visited, .button-dark {
+	display: inline-block;
+	max-width: 200px;
+	margin: 50px 10px 30px 10px;
+	padding: 10px;
+	font-family: "Signika", sans-serif;
+	color: #ffffff;
+	background-color: transparent;
+	border: 2px solid #ffffff;
+	border-radius: 3px;
+	text-transform: capitalize;
+	text-align: center;
+	transition: all 0.1s ease;
+}
+.button-dark, .button-dark:visited {
+	margin: 20px 10px 30px 0;
+	color: #464646;
+	border-color: #464646;
+
+}
+.button:hover, .button-dark:hover {
+	transition: all 0.3s ease;
+}
+.button:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.button-dark:hover {
+	color: #ffffff;
+	background-color: rgba(70, 70, 70, 0.9);
+}
+.fixed-nav-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	width: 100%;
+	height: 50px;
+	background-color: #00a087;
+}
+.content {
+	margin-top: 20px;
+}
+
+.fixed-nav-bar li, .fixed-nav-bar a { 
+	height: 50px;
+	line-height: 50px;
+}
+.menu {
+	width: 90%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+.menu a, .menu a:visited {
+	color: #ffffff;
+}
+.menu a:hover, .menu a:target {
+	color: #ebebeb;
+}
+.menu-items {
+	display: inline-block;
+}
+.sitename {
+	display: inline-block;
+	margin-right: 20px;
+	margin-left: 10px;
+}
+a.sitename, a:visited.sitename {
+	color: #e0e0e0;
+}
+.menu-items li {
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.menu-items a {
+	text-decoration: none;
+}
+.show, .hide {
+	display: none;
+	padding-left: 15px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center left;
+	color: #dde1e2;
+}
+.show {
+	background-image: url(assets/down-arrow-icon.png);
+}
+.hide {
+	background-image: url(assets/up-arrow-icon.png);
+}
+
+@media only screen and (max-width: 800px) {
+	.menu { 
+		position: relative;
+		width: 100%;
+	}
+	.sitename {
+		position: absolute;
+		top: 0;
+		left: 15px;
+		margin-left: 0px;
+	}
+	.menu-items {
+		display: none; 
+		width: 100%;
+		margin-top: 50px;
+		background-color: #008378;
+	}
+	.menu-items li {
+		display: block;
+		text-align: center;
+	}
+	.show, .hide {	
+		position: absolute;
+		top: 0;
+		right: 15px;
+	}
+	.show {
+		display: inline-block;
+	}
+	.hide {
+		display: none;
+	}
+	#menu:target .show {
+		display: none;
+	}
+	#menu:target .hide, #menu:target .menu-items {
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 220px) {
+	.sitename, .show, .hide {
+		font-size: 14px;
+	}
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+}
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 55px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+	<nav class="fixed-nav-bar">
+		<div id="menu" class="menu">
+			<a class="sitename" href="#home"><h3>In<span>SIS</span></h3></a>
+			<a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu">Menu</a>
+			<ul class="menu-items">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#academeic">Academic</a></li>
+				<li><a href="#installation">Installation</a></li>
+			</ul>
+		</div>
+	</nav>	
+</header>
+
+<!-- Content -->
+
+<footer class="footer-distributed">
+	<div class="footer-left">
+		<h3>In<span>SIS</span></h3>
+		<p class="footer-links">
+			<a href="#">Home</a>
+			-
+			<a href="#">About</a>
+			-
+			<a href="#">Contact</a>
+			-
+			<a href="#">About</a>
+			-
+			<a href="#">Academic</a>
+			-
+			<a href="#">Installation</a>
+		</p>
+		<p class="footer-company-name">InSIS &copy; 2016</p>
+	</div>
+	<div class="footer-center">
+		<div>
+			<i class="fa fa-map-marker"></i>
+			<p><span>Where are we?</span> City, Country</p>
+		</div>
+		<div>
+			<i class="fa fa-phone"></i>
+			<p>+62 812 3456 7890</p>
+		</div>
+		<div>
+			<i class="fa fa-envelope"></i>
+			<p><a href="mailto:support@insis.com">support@insis.com</a></p>
+		</div>
+	</div>
+	<div class="footer-right">
+		<p class="footer-company-about">
+			<span>About the company</span>
+					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit,euauctor lacus vehicula sit amet.
+		</p>
+		<div class="footer-icons">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-github"></i></a>
+		</div>
+	</div>
+</footer>
+
+
+</body>
+</html>
